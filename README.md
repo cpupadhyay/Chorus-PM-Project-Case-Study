@@ -113,7 +113,7 @@ Power users today juggle **6 different AI tools** — ChatGPT, Claude, Gemini, P
 Product Management Portfolio | Bengaluru, India
 
 - 📧 chandraprakashupadhyay2001@gmail.com
-- 🔗 [LinkedIn](https://www.linkedin.com/in/chandra-prakash-upadhyay-83b68b193/) ← add your LinkedIn URL
+- 🔗 [LinkedIn](https://www.linkedin.com/in/chandra-prakash-upadhyay-83b68b193/)
 - 🎓 B.Tech CSE, SRMU Lucknow
 - 💼 Data Analyst Intern @ Soroco
 
