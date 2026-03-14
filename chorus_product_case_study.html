@@ -1,0 +1,397 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1c1c1e;--ink2:#4a4a52;--ink3:#8e8e99;
+  --bg:#f8f7f4;--bg2:#eeecea;--card:#ffffff;
+  --line:rgba(0,0,0,0.08);
+  --accent:#5b4fcf;--accent-l:#ede9ff;
+  --teal:#00897b;--teal-l:#e0f2f0;
+  --gold:#c98a00;--gold-l:#fff8e1;
+  --coral:#c0392b;--coral-l:#fdecea;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;padding-bottom:80px}
+
+nav{padding:20px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:100}
+.nav-logo{font-family:var(--serif);font-size:22px;color:var(--ink);letter-spacing:-0.02em}
+.nav-logo span{color:var(--accent)}
+.nav-chip{font-size:11px;padding:4px 12px;border:1px solid var(--line);border-radius:20px;color:var(--ink3);letter-spacing:0.05em;text-transform:uppercase}
+
+.hero{padding:80px 40px 64px;max-width:840px;margin:0 auto;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);font-weight:500;margin-bottom:24px;padding:6px 16px;background:var(--accent-l);border-radius:20px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.85)}}
+h1{font-family:var(--serif);font-size:clamp(52px,8vw,88px);line-height:1.0;letter-spacing:-0.025em;color:var(--ink);margin-bottom:12px}
+h1 em{font-style:italic;color:var(--accent)}
+.tagline{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink3);margin-bottom:28px}
+.hero-desc{font-size:16px;color:var(--ink2);max-width:560px;margin:0 auto 40px;line-height:1.85}
+
+/* Model badges strip */
+.model-strip{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.m-badge{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--line);background:var(--card)}
+.m-dot{width:8px;height:8px;border-radius:50%}
+
+.meta-strip{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.meta-item{text-align:center}
+.meta-label{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);margin-bottom:4px}
+.meta-val{font-size:13px;font-weight:500;color:var(--ink)}
+
+.section{padding:60px 40px;max-width:840px;margin:0 auto}
+.sec-label{font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
+h2{font-family:var(--serif);font-size:clamp(26px,4vw,36px);line-height:1.12;color:var(--ink);margin-bottom:16px;letter-spacing:-0.01em}
+.body-text{color:var(--ink2);font-size:15px;line-height:1.85;max-width:600px}
+
+/* PROBLEM */
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.prob-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px}
+.prob-icon{width:34px;height:34px;border-radius:8px;margin-bottom:12px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.prob-card h4{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.prob-card p{font-size:12px;color:var(--ink3);line-height:1.65}
+
+/* FLOW */
+.flow-wrap{overflow-x:auto;padding-bottom:8px;margin-top:32px}
+.flow{display:flex;align-items:flex-start;gap:0;min-width:600px}
+.flow-step{flex:1;text-align:center;position:relative;padding:0 6px}
+.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-10px;top:24px;color:var(--ink3);font-size:18px;font-weight:300}
+.step-circle{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:20px;border:1px solid var(--line)}
+.step-n{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);margin-bottom:5px}
+.step-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.step-sub{font-size:11px;color:var(--ink3);line-height:1.55}
+
+/* DEMO */
+.demo-shell{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:32px}
+.demo-header{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.demo-title{font-size:13px;font-weight:500;color:var(--ink)}
+.status-chip{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+.status-done{background:var(--teal-l);color:var(--teal)}
+.query-bar{padding:14px 20px;border-bottom:1px solid var(--line);background:var(--bg)}
+.query-bar p{font-size:13px;color:var(--ink2)}
+.query-bar strong{color:var(--ink);font-weight:500}
+
+/* 6 model grid */
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.model-col{padding:14px 16px;border-right:1px solid var(--line)}
+.model-col:nth-child(3),.model-col:nth-child(6){border-right:none}
+.model-col:nth-child(4),.model-col:nth-child(5),.model-col:nth-child(6){border-top:1px solid var(--line)}
+.model-tag{display:inline-block;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;padding:2px 8px;border-radius:4px;margin-bottom:8px}
+.tag-gpt{background:#e8f4e8;color:#2e7d32}
+.tag-claude{background:var(--accent-l);color:var(--accent)}
+.tag-gemini{background:#e3f2fd;color:#1565c0}
+.tag-perp{background:var(--gold-l);color:var(--gold)}
+.tag-grok{background:#f3e8ff;color:#7b1fa2}
+.tag-deep{background:#fce4ec;color:#c62828}
+.model-ans{font-size:11px;color:var(--ink2);line-height:1.6}
+
+.debate-rows{padding:16px 20px;border-bottom:1px solid var(--line)}
+.debate-row{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.debate-row:last-child{margin-bottom:0}
+.d-tag{font-size:10px;font-weight:500;padding:2px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.d-text{font-size:12px;color:var(--ink2);line-height:1.6}
+.d-agree{background:#e8f4e8;color:#2e7d32}
+.d-challenge{background:var(--coral-l);color:var(--coral)}
+.d-refine{background:var(--accent-l);color:var(--accent)}
+.d-unique{background:#fff8e1;color:#c98a00}
+
+.synthesis-box{padding:20px;background:linear-gradient(135deg,var(--accent-l),rgba(0,137,123,0.06))}
+.synth-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--accent);font-weight:500;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.synth-label::before{content:'✦';font-size:12px}
+.synth-ans{font-size:14px;color:var(--ink);line-height:1.75}
+.synth-conf{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.conf-pill{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500}
+.conf-acc{background:var(--teal-l);color:var(--teal)}
+.conf-cons{background:var(--accent-l);color:var(--accent)}
+.conf-src{background:var(--bg2);color:var(--ink3)}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.stat-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 20px;text-align:center}
+.stat-num{font-family:var(--serif);font-size:42px;color:var(--accent);line-height:1;margin-bottom:6px}
+.stat-label{font-size:12px;color:var(--ink3)}
+
+/* PERSONAS */
+.persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.persona-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.persona-avatar{width:38px;height:38px;border-radius:50%;margin-bottom:12px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:#fff}
+.persona-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:3px}
+.persona-role{font-size:11px;color:var(--ink3);margin-bottom:10px}
+.persona-quote{font-size:12px;color:var(--ink2);line-height:1.65;font-style:italic}
+
+/* VS TABLE */
+.vs-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:13px}
+.vs-table th{text-align:left;padding:10px 14px;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink3);font-weight:500;border-bottom:1px solid var(--line)}
+.vs-table td{padding:10px 14px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top}
+.vs-table td:first-child{font-weight:500;color:var(--ink)}
+.vs-table tr:last-child td{border-bottom:none}
+.chorus-col{color:var(--accent);font-weight:500}
+
+.footer{padding:40px;text-align:center;border-top:1px solid var(--line);margin-top:32px}
+.footer-logo{font-family:var(--serif);font-size:28px;color:var(--ink);margin-bottom:8px}
+.footer-logo span{color:var(--accent)}
+.footer-sub{font-size:13px;color:var(--ink3);margin-bottom:12px}
+.footer-credit{font-size:12px;color:var(--ink3)}
+.footer-credit strong{color:var(--ink2)}
+hr{border:none;border-top:1px solid var(--line)}
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Choru<span>s</span></div>
+  <div class="nav-chip">Product Case Study · APM Portfolio</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow"><div class="dot"></div> AI Product Concept · 2025</div>
+  <h1>Choru<em>s</em></h1>
+  <div class="tagline">"Many minds, one answer."</div>
+  <p class="hero-desc">ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek — all giving different answers. Chorus makes them debate each other and delivers one synthesized, verified response you can actually trust.</p>
+
+  <!-- 6 model badges -->
+  <div class="model-strip">
+    <div class="m-badge"><div class="m-dot" style="background:#2e7d32"></div> ChatGPT</div>
+    <div class="m-badge"><div class="m-dot" style="background:#5b4fcf"></div> Claude</div>
+    <div class="m-badge"><div class="m-dot" style="background:#1565c0"></div> Gemini</div>
+    <div class="m-badge"><div class="m-dot" style="background:#c98a00"></div> Perplexity</div>
+    <div class="m-badge"><div class="m-dot" style="background:#7b1fa2"></div> Grok</div>
+    <div class="m-badge"><div class="m-dot" style="background:#c62828"></div> DeepSeek</div>
+  </div>
+
+  <div class="meta-strip">
+    <div class="meta-item"><div class="meta-label">Product Type</div><div class="meta-val">AI Orchestration Layer</div></div>
+    <div class="meta-item"><div class="meta-label">Designed by</div><div class="meta-val">Chandra Prakash Upadhyay</div></div>
+    <div class="meta-item"><div class="meta-label">Models</div><div class="meta-val">6 Frontier AIs</div></div>
+    <div class="meta-item"><div class="meta-label">Stage</div><div class="meta-val">Concept · APM Portfolio</div></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- PROBLEM -->
+<div class="section">
+  <div class="sec-label">01 · Problem</div>
+  <h2>The multi-model chaos</h2>
+  <p class="body-text">Today's power users juggle 6 different AI tools. ChatGPT says one thing, Grok says another, DeepSeek something else entirely. No one knows who to trust — and no one has time to find out.</p>
+  <div class="prob-grid">
+    <div class="prob-card">
+      <div class="prob-icon" style="background:#fdecea">⚡</div>
+      <h4>6 tools, 6 answers</h4>
+      <p>ChatGPT, Claude, Gemini, Perplexity, Grok, DeepSeek — all say something different. Switching wastes time and focus.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon" style="background:var(--gold-l)">🤷</div>
+      <h4>No way to verify</h4>
+      <p>When models disagree, users have no framework to know whose answer is correct. Gut instinct is not a strategy.</p>
+    </div>
+    <div class="prob-card">
+      <div class="prob-icon" style="background:var(--accent-l)">🔁</div>
+      <h4>Manual triangulation</h4>
+      <p>Users copy-paste between tools, re-read six answers, and still can't be confident. They're doing the AI's job.</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- HOW IT WORKS -->
+<div class="section">
+  <div class="sec-label">02 · Solution</div>
+  <h2>How Chorus works</h2>
+  <p class="body-text">One query. Six frontier models respond. They debate, challenge, and refine each other's answers. Chorus synthesizes one high-confidence response — so you never have to triangulate again.</p>
+  <div class="flow-wrap">
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-circle" style="background:var(--accent-l)">💬</div>
+        <div class="step-n">Step 1</div>
+        <div class="step-title">You ask once</div>
+        <div class="step-sub">One query. No tab switching.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-circle" style="background:var(--gold-l)">🤖</div>
+        <div class="step-n">Step 2</div>
+        <div class="step-title">6 models respond</div>
+        <div class="step-sub">All 6 AIs draft answers in parallel.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-circle" style="background:#fdecea">⚔️</div>
+        <div class="step-n">Step 3</div>
+        <div class="step-title">They debate</div>
+        <div class="step-sub">Models challenge and refine each other.</div>
+      </div>
+      <div class="flow-step">
+        <div class="step-circle" style="background:var(--teal-l)">✦</div>
+        <div class="step-n">Step 4</div>
+        <div class="step-title">One answer</div>
+        <div class="step-sub">Highest-confidence synthesis delivered.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- LIVE DEMO -->
+<div class="section">
+  <div class="sec-label">03 · Product Demo</div>
+  <h2>See Chorus in action</h2>
+  <p class="body-text">A real example: user asks about the best diet for cognitive performance. All six models deliberate — and Chorus delivers one verified answer.</p>
+
+  <div class="demo-shell">
+    <div class="demo-header">
+      <div class="demo-title">Chorus · 6-Model Deliberation</div>
+      <div class="status-chip status-done">✓ Synthesized · 5/6 consensus</div>
+    </div>
+    <div class="query-bar">
+      <p><strong>User asked:</strong> "What is the most evidence-backed diet for long-term cognitive performance and brain health?"</p>
+    </div>
+
+    <!-- 6 model answers in 3x2 grid -->
+    <div class="models-grid">
+      <div class="model-col">
+        <div class="model-tag tag-gpt">ChatGPT</div>
+        <div class="model-ans">Mediterranean diet has the strongest RCT evidence base — multiple large trials show reduced cognitive decline over 5+ years.</div>
+      </div>
+      <div class="model-col">
+        <div class="model-tag tag-claude">Claude</div>
+        <div class="model-ans">MIND diet (Mediterranean + DASH hybrid) shows more targeted brain benefits — emphasis on leafy greens, berries, and omega-3s.</div>
+      </div>
+      <div class="model-col">
+        <div class="model-tag tag-gemini">Gemini</div>
+        <div class="model-ans">Mediterranean is well-supported, but 2024 research also points to time-restricted eating as a powerful cognitive enhancer.</div>
+      </div>
+      <div class="model-col">
+        <div class="model-tag tag-perp">Perplexity</div>
+        <div class="model-ans">Consensus pick: Mediterranean diet. MIND diet trials show 53% reduction in Alzheimer's risk. Multiple peer-reviewed citations.</div>
+      </div>
+      <div class="model-col">
+        <div class="model-tag tag-grok">Grok</div>
+        <div class="model-ans">MIND diet aligns with the latest neuroscience literature. Blueberries and walnuts have notably strong individual evidence for cognition.</div>
+      </div>
+      <div class="model-col">
+        <div class="model-tag tag-deep">DeepSeek</div>
+        <div class="model-ans">Mediterranean and MIND diets both supported. Additionally, ketogenic diet shows short-term cognitive gains — though long-term data is limited.</div>
+      </div>
+    </div>
+
+    <!-- Debate -->
+    <div class="debate-rows">
+      <div class="debate-row">
+        <div class="d-tag d-agree">5/6 agree</div>
+        <div class="d-text">ChatGPT, Claude, Gemini, Perplexity, and Grok all converge on MIND diet as primary recommendation with Mediterranean as foundation.</div>
+      </div>
+      <div class="debate-row">
+        <div class="d-tag d-challenge">DeepSeek challenged</div>
+        <div class="d-text">DeepSeek raised ketogenic diet — but majority countered: long-term RCT evidence for keto on cognition remains insufficient vs. MIND.</div>
+      </div>
+      <div class="debate-row">
+        <div class="d-tag d-unique">Grok added</div>
+        <div class="d-text">Specific foods within MIND diet (blueberries, walnuts, leafy greens) have independent strong evidence — useful for actionable guidance.</div>
+      </div>
+      <div class="debate-row">
+        <div class="d-tag d-refine">Chorus refined</div>
+        <div class="d-text">Keto flagged as "emerging, not yet recommended." Time-restricted eating noted as complementary protocol, not replacement. Strong consensus reached.</div>
+      </div>
+    </div>
+
+    <!-- Synthesis -->
+    <div class="synthesis-box">
+      <div class="synth-label">Chorus synthesis</div>
+      <div class="synth-ans">The <strong>MIND diet</strong> (Mediterranean-DASH Intervention for Neurodegenerative Delay) has the strongest combined evidence for long-term cognitive health. Prioritize leafy greens, blueberries, walnuts, fish, and olive oil. Time-restricted eating (16:8) may complement as a secondary protocol. Keto shows short-term promise but lacks long-term RCT support — not yet recommended as primary strategy.</div>
+      <div class="synth-conf">
+        <div class="conf-pill conf-acc">✓ Accuracy: High</div>
+        <div class="conf-pill conf-cons">5/6 models in consensus</div>
+        <div class="conf-pill conf-src">Sources: PREDIMED, MIND Trial, Lancet 2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- STATS -->
+<div class="section">
+  <div class="sec-label">04 · Impact hypothesis</div>
+  <h2>Why this matters at scale</h2>
+  <p class="body-text">The frontier AI landscape now has 6+ major models. The verification problem is only getting bigger — Chorus grows with it.</p>
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">67%</div>
+      <div class="stat-label">of power users check 2+ AI tools per query</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">6</div>
+      <div class="stat-label">frontier models Chorus orchestrates simultaneously</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">~$8B</div>
+      <div class="stat-label">TAM in AI productivity tools by 2027</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- VS TABLE -->
+<div class="section">
+  <div class="sec-label">05 · Competitive positioning</div>
+  <h2>Chorus vs. the alternatives</h2>
+  <p class="body-text">No tool today solves cross-model deliberation and synthesis. Chorus is the trust layer the AI ecosystem is missing.</p>
+  <table class="vs-table">
+    <thead>
+      <tr>
+        <th>Tool</th>
+        <th>What it does</th>
+        <th>What Chorus does differently</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>ChatGPT</td><td>Single model, no verification</td><td class="chorus-col">Routes to 6 models + synthesizes</td></tr>
+      <tr><td>Claude</td><td>Single model, no consensus signal</td><td class="chorus-col">Debate engine + confidence score</td></tr>
+      <tr><td>Gemini</td><td>Single model + Google search</td><td class="chorus-col">Cross-model verification, not just search</td></tr>
+      <tr><td>Perplexity</td><td>Web search + single model output</td><td class="chorus-col">AI-to-AI debate, not source aggregation</td></tr>
+      <tr><td>Grok</td><td>Single model + X/Twitter data</td><td class="chorus-col">Multi-model synthesis with Grok as one voice</td></tr>
+      <tr><td>DeepSeek</td><td>Single model, strong reasoning</td><td class="chorus-col">DeepSeek's reasoning stress-tests other models</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
+<!-- PERSONAS -->
+<div class="section">
+  <div class="sec-label">06 · User personas</div>
+  <h2>Who uses Chorus</h2>
+  <p class="body-text">Anyone who needs verified, high-stakes answers — not just a quick response from whichever tab is open.</p>
+  <div class="persona-grid">
+    <div class="persona-card">
+      <div class="persona-avatar" style="background:var(--accent)">AR</div>
+      <div class="persona-name">Arjun R.</div>
+      <div class="persona-role">MBA student · Research-heavy</div>
+      <div class="persona-quote">"I need to cite the right data. One wrong stat kills my credibility in front of my professor."</div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-avatar" style="background:var(--teal)">PM</div>
+      <div class="persona-name">Priya M.</div>
+      <div class="persona-role">Product Manager · Decision maker</div>
+      <div class="persona-quote">"When making a build-vs-buy call, a confident-sounding wrong answer costs me weeks of engineering time."</div>
+    </div>
+    <div class="persona-card">
+      <div class="persona-avatar" style="background:var(--coral)">SK</div>
+      <div class="persona-name">Sunil K.</div>
+      <div class="persona-role">Independent researcher · Power user</div>
+      <div class="persona-quote">"I already use 5 AIs. Chorus would save me 2 hours a day of manual triangulation."</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">Choru<span>s</span></div>
+  <div class="footer-sub">Many minds, one answer. · ChatGPT · Claude · Gemini · Perplexity · Grok · DeepSeek</div>
+  <div class="footer-credit">Concept & product design by <strong>Chandra Prakash Upadhyay</strong> · APM Portfolio · 2025</div>
+</div>
