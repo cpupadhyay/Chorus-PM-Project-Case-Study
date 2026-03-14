@@ -42,9 +42,8 @@ Power users today juggle **6 different AI tools** — ChatGPT, Claude, Gemini, P
 
 | Deliverable | Link |
 |---|---|
-| 📄 Product Requirements Document (PRD) | [View on Notion](#) |
-| 🎨 UI Wireframes (Dark Mode) | [View on Figma](#) |
-| 🌐 Case Study Page | [View Case Study](#) |
+| 📄 Product Requirements Document (PRD) | [View on Notion](https://www.notion.so/Chorus-Product-Requirements-Document-323a8cb165ba80209feaf6b548840dcb?source=copy_link) |
+| 🎨 UI Wireframes (Dark Mode) | [View on Figma](https://www.figma.com/make/PObaaCOJSgt2QEdt2blsj0/Dark-Mode-AI-App-UI?p=f&t=IO7UxjkxfN2wV0pq-0) |
 
 > ⚠️ Replace `#` with your actual Notion, Figma, and Case Study links.
 
@@ -114,7 +113,7 @@ Power users today juggle **6 different AI tools** — ChatGPT, Claude, Gemini, P
 Product Management Portfolio | Bengaluru, India
 
 - 📧 chandraprakashupadhyay2001@gmail.com
-- 🔗 [LinkedIn](#) ← add your LinkedIn URL
+- 🔗 [LinkedIn](https://www.linkedin.com/in/chandra-prakash-upadhyay-83b68b193/) ← add your LinkedIn URL
 - 🎓 B.Tech CSE, SRMU Lucknow
 - 💼 Data Analyst Intern @ Soroco
 
